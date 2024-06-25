@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  utho-app-operator-chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-06-25T23:59:52.081509+05:30"
+    description: Helm Chart to Install the Utho Application Operator in the Cluster.
+    digest: 9c6fd8ad5316e1f7f9184ebb62f60739adb23d3257c6d5de8db3a5f2d1eb5192
+    name: utho-app-operator-chart
+    type: application
+    urls:
+    - utho-app-operator-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-06-25T23:59:52.080974+05:30"
