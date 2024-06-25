@@ -1,6 +1,6 @@
 apiVersion: v2
 name: utho-app-operator-chart
-description: helm Chart to Install the Utho Application Operator in the Cluster.
+description: Helm Chart to Install the Utho Application Operator in the Cluster.
 
 # A chart can be either an 'application' or a 'library' chart.
 #
