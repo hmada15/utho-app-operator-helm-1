@@ -9,6 +9,6 @@ entries:
     name: utho-app-operator-chart
     type: application
     urls:
-    - utho-app-operator-chart-0.1.0.tgz
+    - utho-app-operator-chart-0.1.1.tgz
     version: 0.1.1
 generated: "2024-06-25T23:59:52.080974+05:30"
