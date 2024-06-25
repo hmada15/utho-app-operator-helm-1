@@ -1,0 +1,8 @@
+Namespace: utho-operator
+
+appName: utho-app-operator
+
+labels:
+  app: utho-app-operator
+
+API_KEY: 123ft
