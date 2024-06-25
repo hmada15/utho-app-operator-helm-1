@@ -1,0 +1,2 @@
+Please ensure you have customised the API_KEY variable with your own API key. You can create one from API Token: https://console.utho.com/api in the Utho Console.
+If you haven't run the helm install command with the --set API_KEY flag, you can run this command to upgrade the helm chart: helm upgrade utho-app-operator utho-app-operator-chart --set API_KEY=<YOUR_API_KEY>

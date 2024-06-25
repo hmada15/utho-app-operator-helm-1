@@ -1,0 +1,190 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app: {{.Values.labels.app}}
+  name: "{{ .Values.appName }}-sa"
+  namespace: {{ .Values.Namespace }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  labels:
+    app: {{.Values.labels.app}}
+  name: "{{ .Values.appName}}-leader-election-role"
+  namespace: {{ .Values.Namespace }}
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - configmaps
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+  - apiGroups:
+      - coordination.k8s.io
+    resources:
+      - leases
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+  - apiGroups:
+      - ""
+    resources:
+      - events
+    verbs:
+      - create
+      - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: "{{ .Values.appName}}-manager-role"
+  labels:
+    app: {{.Values.labels.app}}
+rules:
+  - apiGroups:
+      - apps.utho.com
+    resources:
+      - uthoapplications
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - apps.utho.com
+    resources:
+      - uthoapplications/finalizers
+    verbs:
+      - update
+  - apiGroups:
+      - apps.utho.com
+    resources:
+      - uthoapplications/status
+    verbs:
+      - get
+      - patch
+      - update
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app: {{.Values.labels.app}}
+  name: "{{ .Values.appName}}-metrics-reader"
+rules:
+  - nonResourceURLs:
+      - /metrics
+    verbs:
+      - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app: {{.Values.labels.app}}
+  name: "{{ .Values.appName}}-proxy-role"
+rules:
+  - apiGroups:
+      - authentication.k8s.io
+    resources:
+      - tokenreviews
+    verbs:
+      - create
+  - apiGroups:
+      - authorization.k8s.io
+    resources:
+      - subjectaccessreviews
+    verbs:
+      - create
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app: {{.Values.labels.app}}
+  name: "{{ .Values.appName}}-node-role"
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - nodes
+    verbs:
+      - get
+      - list
+      - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    app: {{.Values.labels.app}}
+  name: "{{ .Values.appName}}-leader-election-rolebinding"
+  namespace: {{ .Values.Namespace }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: "{{ .Values.appName}}-leader-election-role"
+subjects:
+  - kind: ServiceAccount
+    name: "{{ .Values.appName }}-sa"
+    namespace: {{.Values.Namespace}}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app: {{.Values.labels.app}}
+  name: "{{ .Values.appName}}-manager-rolebinding"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: "{{ .Values.appName}}-manager-role"
+subjects:
+  - kind: ServiceAccount
+    name: "{{ .Values.appName }}-sa"
+    namespace: {{ .Values.Namespace }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app: {{.Values.labels.app}}
+  name: "{{ .Values.appName}}-node-rolebinding"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: "{{ .Values.appName}}-node-role"
+subjects:
+  - kind: ServiceAccount
+    name: "{{ .Values.appName }}-sa"
+    namespace: {{ .Values.Namespace }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app: {{.Values.labels.app}}
+  name: "{{ .Values.appName}}-proxy-rolebinding"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: "{{ .Values.appName}}-proxy-role"
+subjects:
+  - kind: ServiceAccount
+    name: "{{ .Values.appName }}-sa"
+    namespace: {{.Values.Namespace }}
