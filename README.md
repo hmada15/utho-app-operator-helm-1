@@ -1,5 +1,7 @@
 # Utho Operator Helm Chart
 
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/utho-operator)](https://artifacthub.io/packages/search?repo=utho-operator)
+
 This chart deploys the Utho Operator on an **Utho Kubernetes Cluster** using the Helm package manager. The Utho Operator is a Kubernetes operator that manages the lifecycle of **Utho Application** CRs in your cluster.
 
 Note: This won't be able to function properly on any standard Kubernetes cluster, you need to have an Utho Kubernetes Cluster.
@@ -23,7 +25,7 @@ $ helm repo add utho-operator https://uthoplatforms.github.io/utho-app-operator-
 
 Install the Utho Operator Chart:
 ```bash
-$ helm install <release_name> utho-operator/utho-app-operator-chart --set API_KEY=<YOUR_API_KEY>
+$ helm install <release_name> utho-operator/utho-app-operator-chart --set API_KEY=<YOUR_API_KEY> -n <namespace> --create-namespace
 ```
 
 The command deploys the Utho Operator on the Kubernetes cluster in the default configuration.
