@@ -40,6 +40,7 @@ $ helm pull utho-operator/utho-app-operator-chart
 The Utho Operator Helm Chart creates the `utho-operator` and installs the following resources in that namespace:
 - Utho Operator Deployment
 - UthoApplication CRD
+- UthoDNS CRD
 - Utho Operator Service
 - Utho Operator Service Account
 - Cluster Roles and Cluster Role Bindings
