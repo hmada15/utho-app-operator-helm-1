@@ -4,7 +4,7 @@ metadata:
   labels:
     app: {{.Values.labels.app}}
   name: "{{ .Values.appName}}-metrics-service"
-  namespace: {{ .Values.Namespace }}
+  namespace: {{ .Release.Namespace }}
 spec:
   ports:
     - name: https

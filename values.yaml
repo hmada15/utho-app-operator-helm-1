@@ -1,8 +1,14 @@
-Namespace: utho-operator
-
 appName: utho-app-operator
 
 labels:
   app: utho-app-operator
 
-API_KEY: 123ft
+image:
+    repository: utho/utho-app-operator
+    tag: 0.1.2
+
+API_KEY: PFJksIhHWxaSDLOGqpUdzRjmwloCMZvEBbVufneNArtYTcygKQiX
+
+Replicas: 2
+
+NumWorkers: 1

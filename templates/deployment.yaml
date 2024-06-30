@@ -4,9 +4,9 @@ metadata:
   labels:
     app: {{.Values.labels.app}}
   name: {{ .Values.appName }}
-  namespace: {{ .Values.Namespace }}
+  namespace: {{ .Release.Namespace }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.Replicas }}
   selector:
     matchLabels:
       app: {{.Values.labels.app}}
@@ -47,7 +47,10 @@ spec:
             - --leader-elect
           command:
             - /manager
-          image: utho/utho-app-operator:latest
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          env:
+            - name: NUM_WORKERS
+              value: {{.Values.NumWorkers }}
           envFrom:
             - secretRef:
                 name: "{{ .Values.appName}}-secret"

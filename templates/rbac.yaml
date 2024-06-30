@@ -4,7 +4,7 @@ metadata:
   labels:
     app: {{.Values.labels.app}}
   name: "{{ .Values.appName }}-sa"
-  namespace: {{ .Values.Namespace }}
+  namespace: {{ .Release.Namespace }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -12,7 +12,7 @@ metadata:
   labels:
     app: {{.Values.labels.app}}
   name: "{{ .Values.appName}}-leader-election-role"
-  namespace: {{ .Values.Namespace }}
+  namespace: {{ .Release.Namespace }}
 rules:
   - apiGroups:
       - ""
@@ -79,6 +79,32 @@ rules:
       - get
       - patch
       - update
+  - apiGroups:
+      - apps.utho.com
+    resources:
+      - uthodns
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - apps.utho.com
+    resources:
+      - uthodns/finalizers
+    verbs:
+      - update
+  - apiGroups:
+      - apps.utho.com
+    resources:
+      - uthodns/status
+    verbs:
+      - get
+      - patch
+      - update
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -134,7 +160,7 @@ metadata:
   labels:
     app: {{.Values.labels.app}}
   name: "{{ .Values.appName}}-leader-election-rolebinding"
-  namespace: {{ .Values.Namespace }}
+  namespace: {{ .Release.Namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -142,7 +168,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: "{{ .Values.appName }}-sa"
-    namespace: {{.Values.Namespace}}
+    namespace: {{.Release.Namespace}}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -157,7 +183,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: "{{ .Values.appName }}-sa"
-    namespace: {{ .Values.Namespace }}
+    namespace: {{ .Release.Namespace }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -172,7 +198,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: "{{ .Values.appName }}-sa"
-    namespace: {{ .Values.Namespace }}
+    namespace: {{ .Release.Namespace }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -187,4 +213,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: "{{ .Values.appName }}-sa"
-    namespace: {{.Values.Namespace }}
+    namespace: {{.Release.Namespace }}
