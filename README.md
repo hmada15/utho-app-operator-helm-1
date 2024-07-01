@@ -25,7 +25,7 @@ $ helm repo add utho-operator https://uthoplatforms.github.io/utho-app-operator-
 
 Install the Utho Operator Chart:
 ```bash
-$ helm install <release_name> utho-operator/utho-app-operator-chart --set API_KEY=<YOUR_API_KEY> -n <namespace> --create-namespace
+$ helm install <release_name> utho-operator/utho-app-operator-chart --version 0.1.2 --set API_KEY=<YOUR_API_KEY> -n <namespace> --create-namespace
 ```
 
 The command deploys the Utho Operator on the Kubernetes cluster in the default configuration.
