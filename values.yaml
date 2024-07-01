@@ -7,7 +7,7 @@ image:
     repository: utho/utho-app-operator
     tag: 0.1.2
 
-API_KEY: PFJksIhHWxaSDLOGqpUdzRjmwloCMZvEBbVufneNArtYTcygKQiX
+API_KEY: 123ft
 
 Replicas: 2
 
