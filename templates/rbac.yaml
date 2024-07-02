@@ -82,7 +82,7 @@ rules:
   - apiGroups:
       - apps.utho.com
     resources:
-      - uthodns
+      - uthodnses
     verbs:
       - create
       - delete
@@ -94,13 +94,13 @@ rules:
   - apiGroups:
       - apps.utho.com
     resources:
-      - uthodns/finalizers
+      - uthodnses/finalizers
     verbs:
       - update
   - apiGroups:
       - apps.utho.com
     resources:
-      - uthodns/status
+      - uthodnses/status
     verbs:
       - get
       - patch
