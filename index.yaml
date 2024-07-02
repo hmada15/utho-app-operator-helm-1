@@ -3,20 +3,20 @@ entries:
   utho-app-operator-chart:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-07-01T22:31:14.773578+05:30"
+    created: "2024-07-02T22:49:37.163829+05:30"
     description: Helm Chart to Install the Utho Application Operator in the Cluster.
-    digest: 0ff92b24b1e315f9661e36aa66b12ea36c4a92e3b52c661d0bc0cd476dbf6ed7
+    digest: c01a1265f2b771219ef4e837cc65f984d69b2c45dd3dcb4adbb65f1fc85ca216
     maintainers:
     - name: rastogiji
       url: https://github.com/rastogiji
     name: utho-app-operator-chart
     type: application
     urls:
-    - utho-app-operator-chart-0.1.2.tgz
+    - pkg/utho-app-operator-chart-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-07-01T22:31:14.772722+05:30"
+    created: "2024-07-02T22:49:37.162683+05:30"
     description: Helm Chart to Install the Utho Application Operator in the Cluster.
     digest: 729fd81b88b78c0b721716bce2654bea9cfe811d28ef3ca7b2dfa030337efabb
     maintainers:
@@ -25,6 +25,6 @@ entries:
     name: utho-app-operator-chart
     type: application
     urls:
-    - utho-app-operator-chart-0.1.1.tgz
+    - pkg/utho-app-operator-chart-0.1.1.tgz
     version: 0.1.1
-generated: "2024-07-01T22:31:14.771939+05:30"
+generated: "2024-07-02T22:49:37.161853+05:30"
