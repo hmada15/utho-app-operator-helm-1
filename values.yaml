@@ -9,6 +9,6 @@ image:
 
 API_KEY: 123ft
 
-Replicas: 2
+Replicas: 1
 
-NumWorkers: "1"
+NumWorkers: 1
