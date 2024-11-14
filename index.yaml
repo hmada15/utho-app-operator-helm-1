@@ -1,69 +1,82 @@
 apiVersion: v1
 entries:
   utho-app-operator-chart:
-    - apiVersion: v2
-      appVersion: 0.0.1
-      created: "2024-07-02T22:49:37.163829+05:30"
-      description: Helm Chart to Install the Utho Application Operator in the Cluster.
-      digest: c01a1265f2b771219ef4e837cc65f984d69b2c45dd3dcb4adbb65f1fc85ca216
-      maintainers:
-        - name: rastogiji
-          url: https://github.com/rastogiji
-      name: utho-app-operator-chart
-      type: application
-      urls:
-        - pkg/utho-app-operator-chart-0.1.5.tgz
-      version: 0.1.5
-    - apiVersion: v2
-      appVersion: 0.0.1
-      created: "2024-07-02T22:49:37.163829+05:30"
-      description: Helm Chart to Install the Utho Application Operator in the Cluster.
-      digest: c01a1265f2b771219ef4e837cc65f984d69b2c45dd3dcb4adbb65f1fc85ca216
-      maintainers:
-        - name: rastogiji
-          url: https://github.com/rastogiji
-      name: utho-app-operator-chart
-      type: application
-      urls:
-        - pkg/utho-app-operator-chart-0.1.4.tgz
-      version: 0.1.4
-    - apiVersion: v2
-      appVersion: 0.0.1
-      created: "2024-07-02T22:49:37.163829+05:30"
-      description: Helm Chart to Install the Utho Application Operator in the Cluster.
-      digest: c01a1265f2b771219ef4e837cc65f984d69b2c45dd3dcb4adbb65f1fc85ca216
-      maintainers:
-        - name: rastogiji
-          url: https://github.com/rastogiji
-      name: utho-app-operator-chart
-      type: application
-      urls:
-        - pkg/utho-app-operator-chart-0.1.3.tgz
-      version: 0.1.3
-    - apiVersion: v2
-      appVersion: 0.0.1
-      created: "2024-07-02T22:49:37.163829+05:30"
-      description: Helm Chart to Install the Utho Application Operator in the Cluster.
-      digest: c01a1265f2b771219ef4e837cc65f984d69b2c45dd3dcb4adbb65f1fc85ca216
-      maintainers:
-        - name: rastogiji
-          url: https://github.com/rastogiji
-      name: utho-app-operator-chart
-      type: application
-      urls:
-        - pkg/utho-app-operator-chart-0.1.2.tgz
-      version: 0.1.2
-    - apiVersion: v2
-      appVersion: 1.16.0
-      created: "2024-07-02T22:49:37.162683+05:30"
-      description: Helm Chart to Install the Utho Application Operator in the Cluster.
-      digest: 729fd81b88b78c0b721716bce2654bea9cfe811d28ef3ca7b2dfa030337efabb
-      maintainers:
-        - name: rastogiji
-          url: https://github.com/rastogiji
-      name: utho-app-operator-chart
-      type: application
-      urls:
-        - pkg/utho-app-operator-chart-0.1.1.tgz
-      version: 0.1.1
-generated: "2024-07-02T22:49:37.161853+05:30"
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-11-14T11:28:09.435873831+02:00"
+    description: Helm Chart to Install the Utho Application Operator in the Cluster.
+    digest: 584fb8a13bde536278f631ea41c403efa9f6333f3848dea9d1cc897db4475f99
+    maintainers:
+    - name: rastogiji
+      url: https://github.com/rastogiji
+    name: utho-app-operator-chart
+    type: application
+    urls:
+    - pkg/utho-app-operator-chart-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-11-14T11:28:09.389145297+02:00"
+    description: Helm Chart to Install the Utho Application Operator in the Cluster.
+    digest: 929dfdfa5adad10d7999dfef70d276197d61e31b44602f1f3f5a28ce82751477
+    maintainers:
+    - name: rastogiji
+      url: https://github.com/rastogiji
+    name: utho-app-operator-chart
+    type: application
+    urls:
+    - pkg/utho-app-operator-chart-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-11-14T11:28:09.384464167+02:00"
+    description: Helm Chart to Install the Utho Application Operator in the Cluster.
+    digest: c21421fca824f3da03e76d34bb1e05a89038c69bc42e3d0134c5e1e1138530f6
+    maintainers:
+    - name: rastogiji
+      url: https://github.com/rastogiji
+    name: utho-app-operator-chart
+    type: application
+    urls:
+    - pkg/utho-app-operator-chart-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-11-14T11:28:09.380152429+02:00"
+    description: Helm Chart to Install the Utho Application Operator in the Cluster.
+    digest: 4ef65707c7fd1ee35ee800bce4c8e456d82935a47a6e9e25317a3efc3a045fca
+    maintainers:
+    - name: rastogiji
+      url: https://github.com/rastogiji
+    name: utho-app-operator-chart
+    type: application
+    urls:
+    - pkg/utho-app-operator-chart-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-11-14T11:28:09.378521333+02:00"
+    description: Helm Chart to Install the Utho Application Operator in the Cluster.
+    digest: c01a1265f2b771219ef4e837cc65f984d69b2c45dd3dcb4adbb65f1fc85ca216
+    maintainers:
+    - name: rastogiji
+      url: https://github.com/rastogiji
+    name: utho-app-operator-chart
+    type: application
+    urls:
+    - pkg/utho-app-operator-chart-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-11-14T11:28:09.376575474+02:00"
+    description: Helm Chart to Install the Utho Application Operator in the Cluster.
+    digest: 729fd81b88b78c0b721716bce2654bea9cfe811d28ef3ca7b2dfa030337efabb
+    maintainers:
+    - name: rastogiji
+      url: https://github.com/rastogiji
+    name: utho-app-operator-chart
+    type: application
+    urls:
+    - pkg/utho-app-operator-chart-0.1.1.tgz
+    version: 0.1.1
+generated: "2024-11-14T11:28:09.375901661+02:00"
